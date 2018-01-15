@@ -9,7 +9,7 @@ applications:
     - config-server
 - name: api-gateway-keycloak
   path: api-gateway-keycloak/build/libs/api-gateway-keycloak-1.0-SNAPSHOT.jar
-  memory: 400M
+  memory: 800M
   instances: 1
   services:
     - service-registry
