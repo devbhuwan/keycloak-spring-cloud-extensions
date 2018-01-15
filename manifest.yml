@@ -1,7 +1,13 @@
 applications:
 - name: uaa-keycloak
   path: uaa-keycloak/build/libs/uaa-keycloak-1.0-SNAPSHOT.jar
-  memory: 1024M
+  memory: 512M
+  services:
+    - service-registry
+    - config-server
+- name: api-gateway-keycloak
+  path: api-gateway-keycloak/build/libs/api-gateway-keycloak-1.0-SNAPSHOT.jar
+  memory: 256M
   services:
     - service-registry
     - config-server

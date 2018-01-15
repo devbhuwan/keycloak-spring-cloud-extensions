@@ -1,0 +1,5 @@
+apply plugin: 'org.asciidoctor.convert'
+
+configure(project) {
+    apply from: "${rootDir}/gradle/starter/docs.gradle"
+}

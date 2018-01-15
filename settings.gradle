@@ -1,5 +1,7 @@
-rootProject.name = 'keycloak-spring-boot-application'
+rootProject.name = 'keycloak-spring-cloud-extensions'
 include 'uaa-client-model'
-include 'uaa-keycloak'
 include 'uaa-client-keycloak-starter'
+include 'uaa-keycloak'
+include 'api-gateway-keycloak'
+include 'docs'
 
