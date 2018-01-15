@@ -1,3 +1,7 @@
+spring:
+  application:
+    name: uaa-keycloak
+
 server:
   port: 8080
 
@@ -21,13 +25,13 @@ spring:
 ---
 spring:
   profiles: cloud
-  datasource:
-    username: ${cloud.services.mysql.connection.username}
-    password: ${cloud.services.mysql.connection.password}
-    url: ${cloud.services.mysql.connection.jdbcUrl}
-    driver-class-name: com.mysql.jdbc.Driver
-keycloak:
-  server:
-    connections-jpa-driver: com.mysql.jdbc.Driver
-    connections-jpa-driver-dialect: org.hibernate.dialect.MySQLDialect
+#  datasource:
+#    username: ${cloud.services.mysql.connection.username}
+#    password: ${cloud.services.mysql.connection.password}
+#    url: ${cloud.services.mysql.connection.jdbcUrl}
+#    driver-class-name: com.mysql.jdbc.Driver
+#keycloak:
+#  server:
+#    connections-jpa-driver: com.mysql.jdbc.Driver
+#    connections-jpa-driver-dialect: org.hibernate.dialect.MySQLDialect
 ---
