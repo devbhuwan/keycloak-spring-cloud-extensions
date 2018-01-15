@@ -1,0 +1,5 @@
+rootProject.name = 'keycloak-spring-boot-application'
+include 'uaa-client-model'
+include 'uaa-keycloak'
+include 'uaa-client-keycloak-starter'
+

@@ -1,0 +1,14 @@
+apply plugin: 'com.palantir.docker'
+
+task copyDockerfile(type: Copy, dependsOn: [dockerPrepare]) {
+    description 'Copies the docker resource directory to the target directory.'
+    from file("$rootDir/gradle/docker")
+    into file("${buildDir}/docker")
+}
+
+docker {
+    //noinspection GroovyAssignabilityCheck
+    name "${project.group}/${jar.baseName}"
+    files jar.archivePath
+    buildArgs(['JAR_FILE': "${jar.archiveName}"])
+}

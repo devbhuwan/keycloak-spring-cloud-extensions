@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+resteasy:
+  deployment:
+    async_job_service_enabled: true
+---
+spring:
+  profiles: test
+  datasource:
+    username: sa
+    url: jdbc:h2:./data/keycloak
+    driver-class-name: org.h2.Driver
+keycloak:
+  server:
+    contextPath: /auth
+    importRealms: import-realm.json
+---
+spring:
+  profiles: mysql
+---
+spring:
+  profiles: cloud
+  datasource:
+    username: ${cloud.services.mysql.connection.username}
+    password: ${cloud.services.mysql.connection.password}
+    url: ${cloud.services.mysql.connection.jdbcUrl}
+    driver-class-name: com.mysql.jdbc.Driver
+keycloak:
+  server:
+    connections-jpa-driver: com.mysql.jdbc.Driver
+    connections-jpa-driver-dialect: org.hibernate.dialect.MySQLDialect
+---

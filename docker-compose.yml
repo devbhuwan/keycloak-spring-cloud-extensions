@@ -1,0 +1,22 @@
+version: '2'
+services:
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: uaa_keycloak_db
+    ports:
+      - 3306
+  uaa-keycloak:
+    image: io.github.devbhuwan/uaa-keycloak
+    ports:
+      - 8080
+    environment:
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/uaa_keycloak_db?useSSL=false
+      SPRING_DATASOURCE_DRIVERCLASSNAME: com.mysql.jdbc.Driver
+      KEYCLOAK_SERVER_CONNECTIONSJPADRIVER: com.mysql.jdbc.Driver
+      KEYCLOAK_SERVER_CONNECTIONSJPADRIVERDIALECT: org.hibernate.dialect.MySQLDialect
+    depends_on:
+      - mysql

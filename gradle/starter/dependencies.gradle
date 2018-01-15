@@ -1,0 +1,9 @@
+dependencies {
+    compile("org.projectlombok:lombok")
+    apt "org.projectlombok:lombok"
+    testCompile("junit:junit")
+    testCompile("org.assertj:assertj-core")
+    testCompile("org.powermock:powermock-api-easymock:${easyPowerMockVersion}")
+    testCompile("org.powermock:powermock-module-junit4:${easyPowerMockVersion}")
+
+}

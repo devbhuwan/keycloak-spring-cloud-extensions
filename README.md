@@ -1,1 +1,0 @@
-# keycloak-spring-boot-application

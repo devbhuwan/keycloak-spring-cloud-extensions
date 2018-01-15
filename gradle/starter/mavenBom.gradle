@@ -1,0 +1,7 @@
+dependencyManagement {
+    imports {
+        //noinspection GroovyAssignabilityCheck
+        mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+        //noinspection GroovyAssignabilityCheck
+    }
+}

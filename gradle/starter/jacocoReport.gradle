@@ -1,0 +1,10 @@
+jacocoTestReport {
+    reports {
+        //noinspection GroovyAssignabilityCheck
+        xml.enabled true
+        //noinspection GroovyAssignabilityCheck
+        html.enabled false
+    }
+}
+
+check.dependsOn jacocoTestReport

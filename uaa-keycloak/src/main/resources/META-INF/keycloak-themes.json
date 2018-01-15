@@ -1,0 +1,13 @@
+{
+  "themes": [
+    {
+      "name": "gorkhas-theme",
+      "types": [
+        "login",
+        "welcome",
+        "admin",
+        "account"
+      ]
+    }
+  ]
+}

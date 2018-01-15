@@ -1,0 +1,17 @@
+logging:
+  level: info
+
+xcs:
+  uaa:
+    client:
+      keycloak:
+        auth-server-url: http://localhost:8080/auth
+        client: uaa-client-keycloak
+        realm: uaa-client
+        client-secret: uaa-client
+        resource:
+          auto-registry:
+            enabled: true
+spring:
+  application:
+    name: UAA-CLIENT-KEYCLOAK-STARTER

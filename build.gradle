@@ -1,0 +1,13 @@
+buildscript {
+    apply from: "$projectDir/gradle/starter/buildscript.gradle", to: buildscript
+}
+
+configure(allprojects) {
+    apply from: "${rootDir}/gradle/starter/applyPlugins.gradle"
+    apply from: "${rootDir}/gradle/starter/repositories.gradle"
+    apply from: "${rootDir}/gradle/starter/dependencies.gradle"
+    apply from: "${rootDir}/gradle/starter/mavenBom.gradle"
+    apply from: "${rootDir}/gradle/starter/docs.gradle"
+    apply from: "${rootDir}/gradle/starter/jacocoReport.gradle"
+    compileJava.dependsOn(processResources)
+}

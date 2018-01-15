@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    username: sa
+    url: jdbc:h2:./data/keycloak
+    driver-class-name: org.h2.Driver
+
+server:
+  port: 8080
+
+resteasy:
+  deployment:
+    async_job_service_enabled: true
+
+keycloak:
+  server:
+    contextPath: /auth
+    importRealms: test-import-realm.json
