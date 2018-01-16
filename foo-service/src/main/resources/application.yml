@@ -1,6 +1,6 @@
 spring:
   application:
-    name: api-gateway-keycloak
+    name: foo-service
 ---
 spring:
   profiles: test

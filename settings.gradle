@@ -3,6 +3,6 @@ include 'uaa-client-model'
 include 'uaa-client-keycloak-starter'
 include 'uaa-keycloak'
 include 'api-gateway-keycloak'
-include 'docs'
 include 'foo-service'
+include 'docs'
 
