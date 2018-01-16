@@ -1,15 +1,23 @@
 applications:
-- name: uaa-keycloak
-  path: uaa-keycloak/build/libs/uaa-keycloak-1.0-SNAPSHOT.jar
+#- name: uaa-keycloak
+#  path: uaa-keycloak/build/libs/uaa-keycloak-1.0-SNAPSHOT.jar
+#  memory: 800M
+#  health-check-type: process
+#  instances: 1
+#  services:
+#    - service-registry
+#    - config-server
+- name: api-gateway-keycloak
+  path: api-gateway-keycloak/build/libs/api-gateway-keycloak-1.0-SNAPSHOT.jar
   memory: 800M
-  health-check-type: process
   instances: 1
   services:
     - service-registry
     - config-server
-- name: api-gateway-keycloak
-  path: api-gateway-keycloak/build/libs/api-gateway-keycloak-1.0-SNAPSHOT.jar
+- name: foo-service
+  path: foo-service/build/libs/foo-service-1.0-SNAPSHOT.jar
   memory: 800M
+  random-route: true
   instances: 1
   services:
     - service-registry

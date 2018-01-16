@@ -3,24 +3,20 @@ apply plugin: 'org.springframework.boot'
 
 configure(project) {
     apply from: "${rootDir}/gradle/starter/docker.gradle"
+    apply from: "${rootDir}/gradle/starter/spring-boot.gradle"
+    apply from: "${rootDir}/gradle/starter/spring-cloud.gradle"
 }
 
 dependencies {
-    compile "io.pivotal.spring.cloud:spring-cloud-services-starter-config-client:${pivotalSpringCloudServicesVersion}"
-    compile "io.pivotal.spring.cloud:spring-cloud-services-starter-service-registry:${pivotalSpringCloudServicesVersion}"
-    compile("org.springframework.cloud:spring-cloud-spring-service-connector:${springCloudServicesVersion}")
-    compile("org.springframework.cloud:spring-cloud-cloudfoundry-connector:${springCloudServicesVersion}")
     compile("org.jboss.resteasy:async-http-servlet-3.0:${resteasyAsyncHttpVersion}")
     compile("org.jboss.resteasy:resteasy-servlet-initializer:${resteasyVersion}")
     compile("org.jboss.resteasy:resteasy-jackson2-provider:${resteasyVersion}")
-    compile("org.springframework.boot:spring-boot-starter-web:${keycloakSpringBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
     compile("javax.servlet:javax.servlet-api:3.1.0")
-    compile("org.springframework.boot:spring-boot-starter-jdbc:${keycloakSpringBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-jdbc:${springBootVersion}")
     compile("org.keycloak:keycloak-dependencies-server-all:${keycloakVersion}")
     compile("com.h2database:h2")
     compile("mysql:mysql-connector-java:5.1.45")
-    apt("org.springframework.boot:spring-boot-configuration-processor:${keycloakSpringBootVersion}")
-    testCompile("org.springframework.boot:spring-boot-starter-test:${keycloakSpringBootVersion}")
     testCompile("org.keycloak:keycloak-authz-client:${keycloakVersion}")
 }
 

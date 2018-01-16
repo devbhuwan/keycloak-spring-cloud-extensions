@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/usr/bin/env bash
 
 function buildWithDockerImage() {
     echo "Clean and Build Project"
@@ -23,5 +23,35 @@ function lunchDockerContainers() {
     echo "Launch Local Docker Running Containers"
     docker-compose up
 }
-#createPcfCloudServices
-buildWithDockerImage && publishToCloudfoundry
+
+# Bash Menu Script Example
+ROOT_DIR=$PWD
+echo "Building From ${ROOT_DIR}"
+PS3='Please enter your choice: '
+options=("buildWithDockerImage" "publishToCloudfoundry" "lunchDockerContainers" "createPcfCloudServices" "Restart Apps in cf" "Quit")
+select opt in "${options[@]}"
+do
+    case $opt in
+        "buildWithDockerImage")
+            echo "you chose 'buildWithDockerImage'"
+            buildWithDockerImage;;
+        "publishToCloudfoundry")
+            echo "you chose 'publishToCloudfoundry'"
+            publishToCloudfoundry;;
+        "lunchDockerContainers")
+            echo "you chose 'lunchDockerContainers'"
+            lunchDockerContainers;;
+        "createPcfCloudServices")
+            echo "you chose 'createPcfCloudServices'"
+            createPcfCloudServices;;
+        "Restart Apps in cf")
+            echo "you chose 'Restart Apps in cf'"
+            printf 'Apps [foo-service]: '
+            read services
+            cf restart ${services};;
+        "Quit")
+            break
+            ;;
+        *) echo invalid option;;
+    esac
+done

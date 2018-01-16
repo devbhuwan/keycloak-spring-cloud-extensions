@@ -1,0 +1,6 @@
+dependencies {
+    compile "io.pivotal.spring.cloud:spring-cloud-services-starter-config-client:${pivotalSpringCloudServicesVersion}"
+    compile "io.pivotal.spring.cloud:spring-cloud-services-starter-service-registry:${pivotalSpringCloudServicesVersion}"
+    compile("org.springframework.cloud:spring-cloud-spring-service-connector:${springCloudServicesVersion}")
+    compile("org.springframework.cloud:spring-cloud-cloudfoundry-connector:${springCloudServicesVersion}")
+}
