@@ -7,8 +7,8 @@ applications:
 #  services:
 #    - service-registry
 #    - config-server
-- name: api-gateway-keycloak
-  path: api-gateway-keycloak/build/libs/api-gateway-keycloak-1.0-SNAPSHOT.jar
+- name: zuul-api-gateway-keycloak
+  path: zuul-api-gateway-keycloak/build/libs/zuul-api-gateway-keycloak-1.0-SNAPSHOT.jar
   memory: 800M
   instances: 1
   services:

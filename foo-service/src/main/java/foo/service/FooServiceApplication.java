@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @ComponentScan(basePackageClasses = RootPackage.class)
@@ -15,11 +16,17 @@ public class FooServiceApplication {
     }
 
     @RestController
+    @RequestMapping("foo")
     static class Endpoint {
 
-        @GetMapping("/api/foo")
+        @GetMapping
         public String foo() {
             return "foo is alive";
+        }
+
+        @GetMapping("bar")
+        public String bar() {
+            return "bar is alive";
         }
     }
 

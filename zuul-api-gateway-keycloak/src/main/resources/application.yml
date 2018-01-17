@@ -1,6 +1,6 @@
 spring:
   application:
-    name: api-gateway-keycloak
+    name: zuul-api-gateway-keycloak
 ---
 spring:
   profiles: test
