@@ -1,12 +1,12 @@
 applications:
-#- name: uaa-keycloak
-#  path: uaa-keycloak/build/libs/uaa-keycloak-1.0-SNAPSHOT.jar
-#  memory: 800M
-#  health-check-type: process
-#  instances: 1
-#  services:
-#    - service-registry
-#    - config-server
+- name: uaa-keycloak
+  path: uaa-keycloak/build/libs/uaa-keycloak-1.0-SNAPSHOT.jar
+  memory: 1024M
+  health-check-type: process
+  instances: 1
+  services:
+    - service-registry
+    - config-server
 - name: zuul-api-gateway-keycloak
   path: zuul-api-gateway-keycloak/build/libs/zuul-api-gateway-keycloak-1.0-SNAPSHOT.jar
   memory: 800M

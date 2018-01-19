@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: api-gateway-keycloak
+---
+spring:
+  profiles: test
+---
+spring:
+  profiles: cloud
+---
