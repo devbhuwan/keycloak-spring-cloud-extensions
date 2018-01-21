@@ -14,10 +14,9 @@ applications:
   services:
     - service-registry
     - config-server
-- name: foo-service
+- name: foo-service-keycloak
   path: foo-service/build/libs/foo-service-1.0-SNAPSHOT.jar
   memory: 800M
-  random-route: true
   instances: 1
   services:
     - service-registry
