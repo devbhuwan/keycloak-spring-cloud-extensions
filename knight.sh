@@ -36,11 +36,20 @@ function createCertificatesForAppsDomain() {
 	    done
 }
 
+function createCertificatesForWebClientDomain() {
+	t='foo-web-client'
+	echo "Generating Certificate For $t"
+	openssl dhparam -out ${t}.pem 2048
+	openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ${t}.key -out ${t}.crt
+	yes | cp -rf ${t}.key ${t}.crt ${t}.pem ${t}/
+	rm ${t}.key ${t}.crt ${t}.pem
+}
+
 # Bash Menu Script Example
 ROOT_DIR=$PWD
 echo "Building From ${ROOT_DIR}"
 PS3='Please enter your choice: '
-options=("buildWithDockerImage" "publishToCloudfoundry" "lunchDockerContainers" "createPcfCloudServices" "createCertificatesForAppsDomain" "Restart Apps in cf" "Quit")
+options=("buildWithDockerImage" "publishToCloudfoundry" "lunchDockerContainers" "createPcfCloudServices" "createCertificatesForAppsDomain" "createCertificatesForWebClientDomain" "Restart Apps in cf" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -59,6 +68,9 @@ do
         "createCertificatesForAppsDomain")
             echo "you chose 'createCertificatesForAppsDomain'"
             createCertificatesForAppsDomain;;
+        "createCertificatesForWebClientDomain")
+            echo "you chose 'createCertificatesForWebClientDomain'"
+            createCertificatesForWebClientDomain;;
         "Restart Apps in cf")
             echo "you chose 'Restart Apps in cf'"
             printf 'Apps [foo-service]: '
