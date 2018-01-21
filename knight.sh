@@ -3,6 +3,7 @@
 function buildWithDockerImage() {
     echo "Clean and Build Project"
     ./gradlew clean build copyDocker docker -x test
+    cd foo-web-client && npm run build && cd ../
 }
 
 function publishToCloudfoundry() {
