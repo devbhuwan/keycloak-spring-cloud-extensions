@@ -2,6 +2,7 @@ applications:
 - name: uaa-keycloak
   path: uaa-keycloak/build/libs/uaa-keycloak-1.0-SNAPSHOT.jar
   memory: 1024M
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
   no-route: true
   health-check-type: process
   instances: 1
@@ -11,6 +12,7 @@ applications:
 - name: zuul-api-gateway-keycloak
   path: zuul-api-gateway-keycloak/build/libs/zuul-api-gateway-keycloak-1.0-SNAPSHOT.jar
   memory: 800M
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
   instances: 1
   services:
     - service-registry
@@ -18,6 +20,7 @@ applications:
 - name: foo-service-keycloak
   path: foo-service/build/libs/foo-service-1.0-SNAPSHOT.jar
   memory: 800M
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
   no-route: true
   instances: 1
   services:
