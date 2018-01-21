@@ -1,11 +1,11 @@
 package foo.service;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @ComponentScan(basePackageClasses = RootPackage.class)
 @SpringBootApplication
@@ -28,6 +28,16 @@ public class FooServiceApplication {
         public String bar() {
             return "bar is alive";
         }
+
+        @PostMapping("submit")
+        public Dto submit(@RequestBody Dto dto) {
+            return dto;
+        }
     }
 
+    @Getter
+    @Setter
+    class Dto {
+        private String name;
+    }
 }

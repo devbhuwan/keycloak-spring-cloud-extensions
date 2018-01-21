@@ -2,6 +2,7 @@ applications:
 - name: uaa-keycloak
   path: uaa-keycloak/build/libs/uaa-keycloak-1.0-SNAPSHOT.jar
   memory: 1024M
+  no-route: true
   health-check-type: process
   instances: 1
   services:
@@ -17,6 +18,7 @@ applications:
 - name: foo-service-keycloak
   path: foo-service/build/libs/foo-service-1.0-SNAPSHOT.jar
   memory: 800M
+  no-route: true
   instances: 1
   services:
     - service-registry
