@@ -1,0 +1,7 @@
+configure(project) {
+    apply from: "${rootDir}/gradle/starter/spring-boot.gradle"
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+}

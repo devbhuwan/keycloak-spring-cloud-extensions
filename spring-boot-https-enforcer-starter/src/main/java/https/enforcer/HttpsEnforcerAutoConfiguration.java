@@ -1,0 +1,10 @@
+package https.enforcer;
+
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@EnableConfigurationProperties(HttpsEnforcerConfiguration.class)
+public class HttpsEnforcerAutoConfiguration {
+
+}

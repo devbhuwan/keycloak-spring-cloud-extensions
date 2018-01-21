@@ -1,8 +1,9 @@
 rootProject.name = 'keycloak-spring-cloud-extensions'
 include 'uaa-client-model'
+include 'spring-boot-https-enforcer-starter'
 include 'uaa-client-keycloak-starter'
 include 'uaa-keycloak'
 include 'zuul-api-gateway-keycloak'
-include 'foo-service'
+include 'foo-service-keycloak'
 include 'docs'
 
