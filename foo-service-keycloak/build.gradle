@@ -8,5 +8,5 @@ configure(project) {
 }
 
 dependencies {
-
+    compile project(":spring-boot-https-enforcer-starter")
 }

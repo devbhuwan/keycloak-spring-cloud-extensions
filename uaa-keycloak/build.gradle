@@ -18,6 +18,7 @@ dependencies {
     compile("com.h2database:h2")
     compile("mysql:mysql-connector-java:5.1.45")
     testCompile("org.keycloak:keycloak-authz-client:${keycloakVersion}")
+    compile project(":spring-boot-https-enforcer-starter")
 }
 
 
