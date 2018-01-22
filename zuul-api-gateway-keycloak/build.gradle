@@ -8,7 +8,8 @@ configure(project) {
 }
 
 dependencies {
-    compile("org.springframework.cloud:spring-cloud-starter-netflix-zuul:1.4.1.RELEASE")
+    compile("org.springframework.cloud:spring-cloud-starter-netflix-zuul:1.4.2.RELEASE")
+    compile("org.springframework.cloud:spring-cloud-starter-hystrix:1.4.2.RELEASE")
     compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
     compile("com.h2database:h2")
     compile project(":spring-boot-https-enforcer-starter")
