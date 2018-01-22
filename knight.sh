@@ -47,6 +47,14 @@ function createCertificatesForAppsDomain() {
 	    done
 }
 
+function cleanCfApps() {
+for i in 'zuul-api-gateway-keycloak' 'uaa-keycloak' 'foo-service-keycloak' 'foo-web-client'
+	    do
+		    echo "Clean App: $i"
+		    yes | cf delete ${i}
+	    done
+}
+
 function createCertificatesForWebClientDomain() {
 	t='foo-web-client'
 	echo "Generating Certificate For $t"
@@ -60,7 +68,7 @@ function createCertificatesForWebClientDomain() {
 ROOT_DIR=$PWD
 echo "Building From ${ROOT_DIR}"
 PS3='Please enter your choice: '
-options=("buildWithDockerImage" "publishToCloudfoundry" "lunchDockerContainers" "createPcfCloudServices" "createCertificatesForAppsDomain" "createCertificatesForWebClientDomain" "Restart Apps in cf" "Quit")
+options=("buildWithDockerImage" "publishToCloudfoundry" "lunchDockerContainers" "createPcfCloudServices" "createCertificatesForAppsDomain" "createCertificatesForWebClientDomain" "cleanCfApps" "Restart Apps in cf" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -82,6 +90,9 @@ do
         "createCertificatesForWebClientDomain")
             echo "you chose 'createCertificatesForWebClientDomain'"
             createCertificatesForWebClientDomain;;
+        "cleanCfApps")
+            echo "you chose 'cleanCfApps'"
+            cleanCfApps;;
         "Restart Apps in cf")
             echo "you chose 'Restart Apps in cf'"
             printf 'Apps [foo-service]: '
