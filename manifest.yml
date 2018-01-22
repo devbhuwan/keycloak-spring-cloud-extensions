@@ -28,6 +28,6 @@ applications:
     - config-server
 - name: foo-web-client
   path: foo-web-client/dist
-  memory: 64M
+  memory: 256M
   instances: 1
   buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git

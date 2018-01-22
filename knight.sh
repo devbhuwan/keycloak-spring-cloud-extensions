@@ -30,9 +30,19 @@ function createCertificatesForAppsDomain() {
     for i in 'zuul-api-gateway-keycloak' 'uaa-keycloak' 'foo-service-keycloak'
 	    do
 		    echo "Generating Certificate For $i"
-		    keytool -genkey -alias ${i} -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore ${i}.jks -validity 3650
-		    yes | cp -rf ${i}.jks ${i}/src/main/resources
-		    rm ${i}.jks
+		    keytool   -genkey \
+                      -alias ${i} \
+                      -storetype PKCS12 \
+                      -keyalg RSA \
+                      -keysize 2048 \
+                      -keystore ${i}.p12 \
+                      -dname "CN=${i}, OU=DEV, O=GorkhasLab, L=Dhangadhi, ST=Kailali, C=NP" \
+                      -validity 3650 \
+                      -keypass password \
+                      -storepass password \
+                      && yes | cp -rf ${i}.p12 ${i}/src/main/resources \
+		              && rm ${i}.p12
+            # openssl pkcs12 -info -in keystore.p12
 	    done
 }
 
