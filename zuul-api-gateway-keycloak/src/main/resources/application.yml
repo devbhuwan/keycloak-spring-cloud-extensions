@@ -1,8 +1,6 @@
 spring:
   application:
     name: zuul-api-gateway-keycloak
-  profiles:
-    active: ssltest
 ---
 spring:
   profiles: test
