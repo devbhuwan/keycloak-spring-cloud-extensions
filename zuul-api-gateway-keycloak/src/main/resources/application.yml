@@ -29,5 +29,5 @@ eureka:
     enabled: false
 https:
   enforcer:
-    enabled: true
+    enabled: false
 ---

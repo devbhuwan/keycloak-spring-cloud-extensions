@@ -1,8 +1,8 @@
 spring:
   application:
     name: zuul-api-gateway-keycloak
-  profiles:
-    active: ssltest
+#  profiles:
+#    active: ssltest
 ---
 spring:
   profiles: test
@@ -29,5 +29,5 @@ eureka:
     enabled: false
 https:
   enforcer:
-    enabled: true
+    enabled: false
 ---

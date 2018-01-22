@@ -11,7 +11,7 @@ applications:
     - config-server
 - name: zuul-api-gateway-keycloak
   path: zuul-api-gateway-keycloak/build/libs/zuul-api-gateway-keycloak-1.0-SNAPSHOT.jar
-  memory: 2024M
+  memory: 1024M
   buildpack: https://github.com/cloudfoundry/java-buildpack.git
   instances: 1
   services:
