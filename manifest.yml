@@ -20,7 +20,7 @@ applications:
 #  routes:
 #    - route: zuul-api-gateway-keycloak.cfapps.io:61015
 - name: foo-service-keycloak
-  path: foo-service-keycloak/build/libs/foo-service-keycloak/-1.0-SNAPSHOT.jar
+  path: foo-service-keycloak/build/libs/foo-service-keycloak-1.0-SNAPSHOT.jar
   memory: 1024M
   buildpack: https://github.com/cloudfoundry/java-buildpack.git
   no-route: true
